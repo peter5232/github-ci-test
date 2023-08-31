@@ -23,16 +23,16 @@
 #ifndef SRC_COMMON_CHANNEL_POOL_H_
 #define SRC_COMMON_CHANNEL_POOL_H_
 
-#include <brpc/channel.h>
+ #include <brpc/channel.h>
 
 #include <memory>
-#include <string>
+ #include <string>
 #include <unordered_map>
-#include <utility>
+ #include <utility>
 
 #include "src/common/concurrent/concurrent.h"
 
-using ChannelPtr = std::shared_ptr<brpc::Channel>;
+ using ChannelPtr = std::shared_ptr<brpc::Channel>;
 
 namespace curve {
 namespace common {
