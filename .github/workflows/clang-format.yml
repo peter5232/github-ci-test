@@ -23,10 +23,16 @@ jobs:
           echo ${{ github.head_ref }} 
           git checkout ${{github.event.pull_request.base.sha}}
           git --no-pager diff --diff-filter=ACMRT ${{github.event.pull_request.base.sha}}  ${{ github.event.pull_request.head.sha }}| clang-format-diff -p1 -i
-          git status
+          modified_files=$(git status | grep "modified:" | awk '{print $2}')
+          if [ ${#modified_files[@]} -gt 0 ];
+          then
+              for file in $modified_files
+              do
 
-          echo ${{ github.ref }}
-          echo ${{ github.ref_name }}
-          echo ${{ github.base_ref }}
-          echo ${{ github.head_ref }}
+                echo "git diff $file"
+                git diff $file
+
+              done
+              exit 1
+         fi 
       
