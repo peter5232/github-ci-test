@@ -20,7 +20,7 @@
  * Author: xuchaojie
  */
 
-#ifndef SRC_CLIENT_CHUNKSERVER_CLIENT_H_
+ #ifndef SRC_CLIENT_CHUNKSERVER_CLIENT_H_
 #define SRC_CLIENT_CHUNKSERVER_CLIENT_H_
 
 #include <brpc/channel.h>

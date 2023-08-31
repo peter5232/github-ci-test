@@ -23,12 +23,12 @@
 #ifndef SRC_CLIENT_CLIENT_METRIC_H_
 #define SRC_CLIENT_CLIENT_METRIC_H_
 
-#include <bvar/bvar.h>
+ #include <bvar/bvar.h>
 
 #include <string>
 #include <vector>
 
-#include "src/client/client_common.h"
+ #include "src/client/client_common.h"
 #include "src/common/string_util.h"
 #include "src/common/timeutility.h"
 
