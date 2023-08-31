@@ -22,7 +22,7 @@ jobs:
           git --no-pager diff --name-only --diff-filter=ACMRT ${{github.event.pull_request.base.sha}} ${{ github.event.pull_request.head.sha }}
           echo ${{ github.head_ref }} 
           git checkout ${{github.event.pull_request.base.sha}}
-          git --no-pager diff --diff-filter=ACMRT ${{github.event.pull_request.base.sha}}  ${{ github.event.pull_request.head.sha }}| clang-format-diff.py -p1 -i
+          git --no-pager diff --diff-filter=ACMRT ${{github.event.pull_request.base.sha}}  ${{ github.event.pull_request.head.sha }}| clang-format-diff -p1 -i
           git status
 
           echo ${{ github.ref }}
