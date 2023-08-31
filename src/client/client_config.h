@@ -30,12 +30,12 @@
 
 namespace curve {
 namespace client {
-
+  
 class ClientConfig {
- public:
+      public:
   int Init(const std::string &configpath);
 
-  const FileServiceOption &GetFileServiceOption() const {
+     const FileServiceOption &GetFileServiceOption() const {
     return fileServiceOption_;
   }
 
