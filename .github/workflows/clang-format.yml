@@ -6,7 +6,7 @@ on:
 
 jobs:
   format:
-    runs-on: alpine:latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -18,7 +18,7 @@ jobs:
       - name: check
         run: |
           
-          apk add --no-cache clang-extra-tools python3 git
+          apt install  -y clang-tools python3 git
           git --no-pager diff --name-only --diff-filter=ACMRT ${{github.event.pull_request.base.sha}} ${{ github.event.pull_request.head.sha }}
           echo ${{ github.head_ref }} 
           git checkout ${{github.event.pull_request.base.sha}}
